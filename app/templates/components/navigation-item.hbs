@@ -1,0 +1,22 @@
+{{#unless action}}
+  {{#if model}}
+    {{#link-to route model class="navigation-item__link"}}
+      {{icon-view class="navigation-item__icon" icon=icon isClassIconType=isClassIconType}}
+      <span class="navigation-item__label">{{label}}</span>
+    {{/link-to}}
+  {{else}}
+    {{#link-to route class="navigation-item__link"}}
+      {{icon-view class="navigation-item__icon" icon=icon isClassIconType=isClassIconType}}
+      <span class="navigation-item__label">{{label}}</span>
+    {{/link-to}}
+  {{/if}}
+{{else}}
+  <a href="#{{route}}" class="navigation-item__link">
+    {{icon-view class="navigation-item__icon" icon=icon isClassIconType=isClassIconType}}
+    <span class="navigation-item__label">{{label}}</span>
+  </a>
+{{/unless}}
+
+{{#if tooltip}}
+  {{tooltip-view tooltip elementId position="right"}}
+{{/if}}

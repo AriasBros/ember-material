@@ -1,0 +1,18 @@
+@mixin circle-ripple($top, $left, $color: #fff, $opacity: 0.2, $duration: 0.25s) {
+  width: 0;
+  height: 0;
+  position: absolute;
+  background-color: rgba($color, $opacity);
+  top: $top;
+  left: $left;
+  z-index: 1;
+  border-radius: 50%;
+
+  will-change: width, height, top, left, background-color;
+  transition:
+    width $duration ease-in-out,
+    height $duration ease-in-out,
+    top $duration ease-in-out,
+    left $duration ease-in-out,
+    background-color $duration ease-in-out;
+}

@@ -1,0 +1,16 @@
+<div class="data-table__pager-per-page">
+  Rows per page: {{per-page}}
+</div>
+
+<div class="data-table__pager-page">
+  {{firstInCurrentPage}}-{{lastInCurrentPage}} of {{count}}
+</div>
+
+<div class="data-table__pager-actions">
+  {{icon-button "first_page" disabled=cannotGoToPreviousPage action=(action "onChangePage" 1 "onFirstPage")}}
+  
+  {{icon-button "chevron_left" disabled=cannotGoToPreviousPage action=(action "onChangePage" (decrement page) "onPreviousPage")}}
+  {{icon-button "chevron_right" disabled=cannotGoToNextPage action=(action "onChangePage" (increment page) "onNextPage")}}
+  
+  {{icon-button "last_page" disabled=cannotGoToNextPage action=(action "onChangePage" pages "onLastPage")}}
+</div>

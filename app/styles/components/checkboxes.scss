@@ -1,0 +1,100 @@
+$checkbox-size: 24px !default;
+$checkbox-border-width: 3px !default;
+
+.checkbox {
+    cursor: pointer;
+    align-items: center;
+    display: inline-flex;
+
+    input {
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+    }
+
+    &__control {
+        position: relative;
+        border: $checkbox-border-width solid rgba(0, 0, 0, 0.54);
+        border-radius: 3px;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        display: inline-block;
+        transition:
+            animation-enter(background-color, 0.25s),
+            animation-enter(border-color, 0.25s); 
+        will-change: background-color, border-color;
+
+        & > .icon {
+            color: $on-primary-color;
+            opacity: 0.0;
+            transition:
+                animation-enter(opacity, 0.25s),
+                animation-enter(color, 0.25s); 
+            will-change: color, opacity;
+            position: relative;
+            top: -$checkbox-border-width;
+            left: -$checkbox-border-width;
+        }
+
+        & > input {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        margin: 0 0 0 8px;
+    }
+
+    &--selected {
+        .checkbox {
+            &__control {
+                border-color: transparent;
+                background-color: $primary-color;
+    
+                & > .icon {
+                    opacity: 1.0;
+                }
+            }      
+        }
+    }
+
+    &--disabled {
+        cursor: default;
+
+        &.checkbox--selected {
+            .checkbox__control {
+                border-color: transparent;
+                background-color: rgba(0, 0, 0, 0.21);
+            }
+        }
+
+        .checkbox {
+            &__control {
+                border-color: rgba(0, 0, 0, 0.21);
+            }
+
+            &__label {
+                cursor: default;
+            }        
+        }
+    }
+
+    &:not(.checkbox--disabled) {
+        &:not(.checkbox--selected) {
+            .checkbox__control:hover {
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        &.checkbox--selected {
+            .checkbox__control:hover {
+                & > .icon {
+                    color: lighten($primary-color, 50%);
+                }
+            }
+        }
+    }
+}

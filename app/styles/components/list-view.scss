@@ -1,0 +1,103 @@
+.list-view {
+    list-style:none;
+    padding: 0;
+    margin: 0;
+
+    &__item {
+        &-avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 16px;
+        }
+
+        &-link {
+            position: relative;
+            display: flex;
+            background-color: $surface-color;
+            will-change: background-color;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+                text-decoration: none;
+                background-color: rgba($on-surface-color, 0.12);
+            }
+        }
+
+        &-label {
+            @include text-ellipsis;
+
+            display: block;
+            color: rgba(0,0,0,0.87);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        &-secondary-label {
+            display: block;
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+
+            .icon {
+                font-size: 16px;
+                vertical-align: sub;
+            }
+        }
+
+        &-reorder-handler {
+            line-height: 1;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            cursor: ns-resize;
+
+            & + .list-view__item-label {
+                padding-right: 40px;
+
+                & + .list-view__item-secondary-label {
+                    padding-right: 40px;
+                }
+            }
+        }
+
+        &--single-line {
+            .list-view__item-content {
+                padding: 12px 16px;
+            }
+        }
+
+        &--two-lines {
+            .list-view__item-content {
+                padding: 12px 16px;
+            }
+        }
+    }
+
+    &--bordered {
+        .list-view__item {
+            & + .list-view__item {
+                border-top: 1px solid rgba(0, 0, 0, 0.12);
+    
+                &:last-child {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                }
+            }
+        }
+    }
+
+    &--item-single-line {
+        .list-view__item {
+            @extend .list-view__item--single-line;
+        }
+    }
+
+    &--item-two-lines {
+        .list-view__item {
+            @extend .list-view__item--two-lines;
+        }
+    }
+}

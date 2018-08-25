@@ -1,0 +1,53 @@
+.tooltip {
+  position: fixed;
+  z-index: -1;
+  font-size: 10px;
+  font-weight: bold;
+  color: $tooltip-fg-color;
+  background-color: $tooltip-bg-color;
+  border-radius: 4px;
+  padding: 4px 8px;
+  transform-origin: top center;
+  pointer-events: none;
+  
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    padding: 5px 16px;
+  }  
+
+  &--visible {
+    animation: tooltip-in 150ms ease-in-out forwards;
+  }
+
+  &--hiding {
+    animation: tooltip-out 75ms ease-in-out forwards;
+  }
+
+  @at-root {    
+    @keyframes tooltip-out {
+        0% {
+            z-index: 16;
+            opacity: 1.0;
+        }
+        
+        100% {
+            z-index: 16;
+            opacity: 0.0;
+        }
+    }
+
+    @keyframes tooltip-in {
+        0% {
+            transform: scale(0);
+            z-index: 16;
+            opacity: 0.0;
+        }
+        
+        100% {
+            transform: scale(1);
+            z-index: 16;
+            opacity: 1.0; 
+        }
+    }
+  }
+}

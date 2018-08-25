@@ -1,0 +1,15 @@
+.centered-container {
+  @extend .container-fluid;
+
+  height: 100%;
+  display: flex;
+  align-items:baseline;
+
+  &--vertical {
+    justify-content: center;
+  }
+
+  &--horizontal {
+    align-items: center;
+  }
+}

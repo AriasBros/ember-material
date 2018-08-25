@@ -1,0 +1,9 @@
+<div class="backdrop__layer backdrop__layer--back">
+  {{yield}}
+</div>
+
+<div class="backdrop__layer backdrop__layer--front" style={{style}}>
+  {{outlet}}
+
+  <div class="backdrop__overlay" {{action "toggleFrontLayer"}}></div>
+</div>

@@ -1,0 +1,128 @@
+.container-navigation {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+
+  .app-bar + .nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-grow: 1;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  & > .app-bar {
+    transition: top 0.3s ease-in-out;
+
+    & + .container-navigation > .navigation__drawer {
+      .nav {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__drawer {
+    background-color: $navigation-drawer-bg-color;
+    color: $navigation-drawer-fg-color;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .nav {
+      height: 100%;
+    }
+
+    &.navigation__drawer--rail {
+      width: 56px;
+
+      @include media-breakpoint-up(md) {
+        width: 72px;
+      }
+    }
+
+    &:not(.navigation__drawer--rail) {
+        .tooltip {
+            display: none;
+        }
+    }
+
+    & > .app-bar {
+      width: 100%;
+    }
+  }
+
+  &__detail {
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+  }
+
+  &-item {
+      @extend .nav-item;
+
+      padding:4px 8px;
+
+      @include media-breakpoint-up(md) {
+          padding:4px 16px;
+      }
+
+      &--divider {
+          padding: 0;
+          margin: 8px 16px;
+          height: 1px;
+          background-color: #fff;
+      }
+
+      &--push {
+          background-color: transparent;
+          flex-grow: 1;
+      }
+
+      &__icon {
+          margin-right: 32px;
+      }
+
+      &__link {
+          @extend .nav-link;
+
+          font-weight: 500;
+          padding: 8px;
+          display: flex;
+          border-radius: 2px;
+          color: $navigation-drawer-fg-color;
+          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+          &.active {
+              color: $navigation-drawer-active-item-fg-color;
+              background-color: $navigation-drawer-active-item-bg-color;
+          }
+
+          &:hover:not(.active) {
+              color: $navigation-drawer-hover-item-fg-color;
+              background-color: $navigation-drawer-hover-item-bg-color;
+          }
+
+          &:focus {
+              outline:none;
+
+              &:not(.active) {
+                  color: $navigation-drawer-focus-item-fg-color;
+                  background-color: $navigation-drawer-focus-item-bg-color;
+              }
+          }
+      }
+
+      &__label {
+          flex-grow: 1;
+          line-height: 24px;
+          font-size: 16px;
+          white-space: nowrap;
+      }
+  }
+}

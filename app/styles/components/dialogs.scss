@@ -1,0 +1,91 @@
+.dialog {
+    cursor: default;
+    min-width: 280px;
+    padding: 0;
+    display: inline-block;
+    background-color: $surface-color;
+    border-radius: 4px;
+    box-shadow:
+        0 11px 15px -7px rgba(0,0,0,.2),
+        0 24px 38px 3px rgba(0,0,0,.14),
+        0 9px 46px 8px rgba(0,0,0,.12);
+
+    &__header {
+        padding: 20px 24px;
+    }
+
+    &__content {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.6);
+        padding: 0 24px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 20px;
+        color: rgba(0,0,0,0.87);
+    }
+
+    &__supporting-text {
+        font-size: 16px;
+        color: rgba(0,0,0,0.6);
+    }
+
+    &__actions {
+        padding: 8px 8px 8px 24px;
+        //margin: 28px -24px -24px 0;
+        text-align: right;
+    }
+
+    &-scrim {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.3);
+        z-index: -100;
+        opacity: 0.0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        &--clickable {
+            cursor: pointer;
+        }
+
+        &--visible {
+            animation: dialog-fade-in 0.35s ease-in-out forwards;
+        }
+
+        &--hiding {
+            animation: dialog-fade-out 0.35s ease-in-out forwards;
+        }
+
+        @at-root {    
+            @keyframes dialog-fade-out {
+                0% {
+                    z-index: 24;
+                    opacity: 1.0;
+                }
+                
+                100% {
+                    z-index: 24;
+                    opacity: 0.0;
+                }
+            }
+
+            @keyframes dialog-fade-in {
+                0% {
+                    z-index: 24;
+                    opacity: 0.0;
+                }
+                
+                100% {
+                    z-index: 24;
+                    opacity: 1.0; 
+                }
+            }
+        }
+    }
+}

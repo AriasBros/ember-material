@@ -1,0 +1,19 @@
+{{#if navigation}}
+  {{action-item class="action-item--navigation" icon=icon action=(action "navigationItemClicked")}}
+{{/if}}
+
+<h6 class="app-bar__title">
+  {{title}}
+</h6>
+
+<div class="app-bar__actions">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{#each actionItems as |actionItem|}}
+      {{action-item actionItem.tag actionItem.icon action=(action actionItem.action target=actionItem.target)}}
+    {{/each}}
+  {{/if}}
+</div>
+
+{{linear-progress progress=progress hidden=progressHidden}}

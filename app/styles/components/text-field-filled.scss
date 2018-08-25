@@ -1,0 +1,124 @@
+.text-field {
+  &--filled {
+    .text-field__box {
+      background-color: $text-field-filled-box-bg-color;
+      border-radius: 4px 4px 0 0;
+      border-bottom: 1px solid $text-field-filled-border-color;
+
+      will-change: border-bottom, background-color;
+      transition:
+        border-bottom 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+    }
+
+    .text-field__ripple {
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      will-change: background-color;
+      transition: background-color 0.2s ease-in-out;
+
+      & > .ripple {
+        &__part {
+          left: 50%;
+          right: 50%;
+          height: 100%;
+          background-color: $text-field-filled-activate-color;
+          position: absolute;
+          will-change: left, right;
+        }
+      }
+    }
+
+    .text-field__label {
+      color:$text-field-filled-label-color;
+      padding: 19px 12px 18px 12px;
+
+      will-change: color, padding, font-size;
+
+      transition:
+        color 0.2s ease-in-out,
+        padding 0.2s ease-in-out,
+        font-size 0.2s ease-in-out;
+    }
+
+    .text-field__btn-clear {
+      right: 12px;
+      top:16px;
+    }
+
+    .text-field__input {
+      padding: 19px 12px 18px 12px;
+    }
+
+    &.text-field--with-input,
+    &.text-field--activated
+    {
+      .text-field__label {
+        line-height: 1;
+        font-size: 12px;
+        padding: 10px 12px 0 12px;
+      }
+
+      .text-field__input {
+        padding-top: 25px;
+        padding-bottom: 12px;
+      }
+
+      &.text-field--with-error {
+        .text-field__label {
+          color: $error-color;          
+        }
+
+        .text-field__ripple, .text-field__ripple > .ripple__part {
+          background-color: $error-color;
+        }
+      }
+    }
+
+    &.text-field--activated {
+      .text-field__label {
+        color: $text-field-filled-activate-color;
+      }
+
+      .text-field__ripple {
+        background-color: $text-field-filled-activate-color;
+        transition-delay: 0.2s;
+
+        & > .ripple {
+          &__part {
+            transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+
+            &--left {
+              left: 0;
+            }
+
+            &--left {
+              right: 0;
+            }
+          }
+        }
+      }
+
+      &:not(.text-field--with-ripple) {
+        .text-field__box {
+          border-bottom: 2px solid $text-field-filled-activate-color;
+        }
+
+        .text-field__ripple {
+          display: none;
+        }
+      }
+    }
+
+    &:not(.text-field--activated):not(.text-field--disabled) {
+      .text-field__box {
+        &:hover {
+          background-color: $text-field-filled-box-hover-bg-color;
+        }
+      }
+    }
+  }
+}

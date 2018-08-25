@@ -1,0 +1,87 @@
+$font-family: "Roboto" !default;
+
+// Grid
+$grid-gutter-width: 48px !default;
+$grid-gutter-width-lg: 48px !default;
+
+// Colors - Backgrounds
+$primary-color: #6200ee !default;
+$primary-variant-color: #3700b3 !default;
+$secondary-color: #03dac6 !default;
+$secondary-variant-color: #018786 !default;
+$background-color: #ffffff !default;
+$surface-color: #ffffff !default;
+$error-color: #b00020 !default;
+
+// Colors - Foregrounds
+$on-primary-color: #ffffff !default;
+$on-secondary-color: #000000 !default;
+$on-background-color: #000000 !default;
+$on-surface-color: #000000 !default;
+$on-error-color: #ffffff !default;
+
+// Text Field
+$text-field-input-color: #3c4043 !default;
+$text-field-label-color: rgba(0,0,0,0.6) !default;
+$text-field-helper-text-color: $text-field-label-color !default;
+$text-field-clear-button-bg-color: rgba(0,0,0,0.38) !default;
+$text-field-clear-button-hover-bg-color: rgba(0,0,0,0.5) !default;
+$text-field-border-color: rgba(0,0,0,0.25) !default;
+$text-field-activate-color: $primary-color !default;
+$text-field-hover-color: rgba(0,0,0,0.06) !default;
+
+// Text Field - Filled
+$text-field-filled-label-color: $text-field-label-color !default;
+$text-field-filled-hover-color: $text-field-hover-color !default;
+$text-field-filled-box-bg-color: rgba(0,0,0,0.04) !default;
+$text-field-filled-box-hover-bg-color: $text-field-filled-hover-color !default;
+$text-field-filled-border-color: $text-field-border-color !default;
+$text-field-filled-activate-color: $text-field-activate-color !default;
+
+// Text Field - Outlined
+$text-field-outlined-label-color: $text-field-label-color !default;
+$text-field-outlined-border-color: $text-field-border-color !default;
+$text-field-outlined-box-hover-bg-color: rgba(0,0,0,0.5) !default;
+$text-field-filled-activate-color: $text-field-activate-color !default;
+
+// Navigation Drawer
+$navigation-drawer-bg-color: $surface-color !default;
+$navigation-drawer-fg-color: rgba($on-surface-color, 0.87) !default;
+$navigation-drawer-active-item-fg-color: $primary-color !default;
+$navigation-drawer-active-item-bg-color: rgba($navigation-drawer-active-item-fg-color, 0.21) !default;
+$navigation-drawer-hover-item-fg-color: $on-surface-color !default;
+$navigation-drawer-hover-item-bg-color: rgba($on-surface-color, 0.15) !default;
+$navigation-drawer-focus-item-fg-color: $on-surface-color !default;
+$navigation-drawer-focus-item-bg-color: rgba($on-surface-color, 0.21) !default;
+
+// Backdrop
+$backdrop-front-layer-border-radius: 16px 16px 0 0 !default;
+$backdrop-front-layer-transition: top 0.35s ease-in-out !default;
+
+$backdrop-back-layer-bg-color: $primary-color !default;
+$backdrop-back-layer-fg-color: $on-primary-color !default;
+
+$backdrop-front-layer-bg-color: $surface-color !default;
+$backdrop-front-layer-fg-color: $on-surface-color !default;
+
+$backdrop-front-navigation-item-fg-color: $navigation-drawer-fg-color !default;
+$backdrop-front-navigation-item-active-fg-color: $navigation-drawer-active-item-fg-color !default;
+$backdrop-front-navigation-item-active-bg-color: rgba($backdrop-front-navigation-item-active-fg-color, 0.21) !default;
+
+// Linear Progress
+$linear-progress-indicator-color: $primary-color !default;
+$linear-progress-track-color: rgba($linear-progress-indicator-color, 0.6) !default;
+
+// Chip
+$chip-height: 32px !default;
+
+// Tooltip
+$tooltip-bg-color: rgba(97, 97, 97, 0.9);
+$tooltip-fg-color: #ffffff;
+
+// Switch
+$switch-width: 36px !default;
+$switch-thumb-width: 20px !default;
+$switch-thumb-height: 20px !default;
+$switch-track-width: 100% !default;
+$switch-track-height: 14px !default;

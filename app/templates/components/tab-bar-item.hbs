@@ -1,0 +1,13 @@
+<a class="tab-bar-item__link" href="{{route}}">
+    {{#if icon}}
+        {{icon-view class="tab-bar-item__icon" icon=icon isClassIconType=isClassIconType}}
+    {{/if}}
+
+    {{#unless only-icon}}
+        {{#if label}}
+            <span class="tab-bar-item__label">
+                {{label}}
+            </span>
+        {{/if}}
+    {{/unless}}
+</a>

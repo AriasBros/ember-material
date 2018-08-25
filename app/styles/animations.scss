@@ -1,0 +1,54 @@
+$animation-deceleration-curve-timing-function: cubic-bezier(0, 0, .2, 1) !default;
+$animation-standard-curve-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
+$animation-acceleration-curve-timing-function: cubic-bezier(.4, 0, 1, 1) !default;
+$animation-sharp-curve-timing-function: cubic-bezier(.4, 0, .6, 1) !default;
+
+@function mdc-animation-enter($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-deceleration-curve-timing-function;
+}
+
+@function mdc-animation-exit-permanent($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-acceleration-curve-timing-function;
+}
+
+@function mdc-animation-exit-temporary($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-sharp-curve-timing-function;
+}
+
+@function mdc-animation-standard($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-standard-curve-timing-function;
+}
+
+@function animation-enter($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-deceleration-curve-timing-function;
+}
+
+@function animation-standard($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $animation-standard-curve-timing-function;
+}
+
+@keyframes fade-out {
+    0% {
+        z-index: 1;
+        opacity: 1.0;
+    }
+    
+    100% {
+        z-index: 1;
+        opacity: 0.0;
+    }
+}
+
+@keyframes scale-fade-in {
+    0% {
+        transform: scale(0);
+        z-index: 1;
+        opacity: 0.0;
+    }
+    
+    100% {
+        transform: scale(1);
+        z-index: 1;
+        opacity: 1.0; 
+    }
+}

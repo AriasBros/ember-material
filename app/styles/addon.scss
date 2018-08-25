@@ -1,0 +1,40 @@
+@import "mixins";
+@import "theming";
+@import "bootstrap/scss/bootstrap";
+@import "grid";
+@import "layout";
+@import "animations";
+@import "components/spacer";
+@import "components/ripple";
+@import "components/rating";
+@import "components/buttons";
+@import "components/checkboxes";
+@import "components/switches";
+@import "components/chips";
+@import "components/text-field";
+@import "components/text-area";
+@import "components/progress";
+@import "components/slider";
+@import "components/app-bar";
+@import "components/data-table";
+@import "components/navigation";
+@import "components/tabs";
+@import "components/backdrop";
+@import "components/card";
+@import "components/sheet-side";
+@import "components/lists";
+@import "components/list-view";
+@import "components/dialogs";
+@import "components/tooltips";
+@import "components/snackbars";
+
+html, body {
+    height: 100%;
+    font-family: $font-family;
+}
+
+.ember-application {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

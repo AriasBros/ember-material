@@ -1,0 +1,9 @@
+<div class="checkbox__control">
+  {{icon-view "check"}}
+  <input id="input-{{elementId}}" type="checkbox" checked="{{selected}}">
+</div>
+
+
+{{#if label}}
+  <label class="checkbox__label" for="input-{{elementId}}">{{label}}</label>
+{{/if}}

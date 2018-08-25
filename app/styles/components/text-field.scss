@@ -1,0 +1,104 @@
+.form-row + .form-row {
+  margin-top: 12px;
+}
+
+.text-field {
+  opacity: 1.0;
+  will-change: opacity;
+  transition: opacity 0.2s ease-in-out;
+  position: relative;
+
+  & + .text-field {
+    margin-top: 12px;
+  }
+
+  & + .form-row {
+    margin-top: 12px;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &--with-error {
+    .text-field__label,
+    .text-field__helper-text {
+      color: $error-color;
+    }
+  }
+
+  &__box {
+    position: relative;
+    font-size: 16px;
+  }
+
+  &__label {
+    pointer-events: none;
+    margin: 0;
+    position: absolute;
+    line-height: 1;
+    font-weight: 500;
+  }
+
+  &__input {
+    color: $text-field-input-color;
+    line-height: 1;
+    width: 100%;
+    border:none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__helper-text {
+    font-size: 12px;
+    color: $text-field-helper-text-color;
+    padding: 8px 12px 0;
+    line-height: 1.25;
+    display: flex;
+    min-height: 23px;
+  }
+
+  &__btn-clear {
+    @extend .btn;
+    @extend .btn-link;
+
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    border: none;
+
+    color: #e5e5e5;
+    background-color: $text-field-clear-button-bg-color;
+    border-radius: 24px;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      color: #e5e5e5;
+      background-color: $text-field-clear-button-hover-bg-color;
+    }
+
+    // Font Awesome support
+    // Material Icons support
+    & > .fa-times,
+    & > .material-icons
+    {
+      font-size: 18px;
+      line-height: 24px;
+      position: absolute;
+      top: 0;
+      left: 1px;
+      right: 0;
+    }
+  }
+
+  &__counter {
+    margin-left: auto;
+  }
+}
+
+@import "text-field-filled";
+@import "text-field-outlined";

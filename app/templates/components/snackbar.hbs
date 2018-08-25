@@ -1,0 +1,7 @@
+<div class="snackbar__text-label">
+  {{textLabel}}
+</div>
+
+{{#if actionLabel}}
+  {{text-button actionLabel action=(action "onPerformAction") class="snackbar__action"}}
+{{/if}}

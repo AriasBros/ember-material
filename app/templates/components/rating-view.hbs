@@ -1,0 +1,23 @@
+{{#each fullCounter as |c|}}
+    {{#if usingIconsAsResources}}
+        {{icon-view full class="rating-view__icon rating-view__icon--full"}}
+    {{else}}
+        <img class="rating-view__image rating-view__image--full" src="{{full}}" />
+    {{/if}}
+{{/each}}
+
+{{#unless isRoundedValue}}
+    {{#if usingIconsAsResources}}
+        {{icon-view half class="rating-view__icon rating-view__icon--half"}}
+    {{else}}
+        <img class="rating-view__image rating-view__image--empty" src="{{half}}" />
+    {{/if}}
+{{/unless}}
+
+{{#each emptyCounter as |c|}}
+    {{#if usingIconsAsResources}}
+        {{icon-view empty class="rating-view__icon rating-view__icon--empty"}}
+    {{else}}
+        <img class="rating-view__image rating-view__image--empty" src="{{empty}}" />
+    {{/if}}
+{{/each}}

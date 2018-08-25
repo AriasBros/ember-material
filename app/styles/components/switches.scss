@@ -1,0 +1,106 @@
+.switch {
+    width: $switch-width;
+    padding: 3px 0;
+    margin: 2px 1px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__track {
+        position: relative;
+        width: $switch-track-width;
+        height: $switch-track-height;
+        background-color: rgba(0.0, 0.0, 0.0, 0.35);
+        border-radius: 14px;
+        will-change: background-color, right;
+        transition: background-color 0.25s $animation-standard-curve-timing-function;
+    }
+
+    &__thumb {
+        width: $switch-thumb-width;
+        height: $switch-thumb-height;
+        position: absolute;
+        top: -3px;
+        right: $switch-width - $switch-thumb-width;
+        border-radius: 50%;
+        background-color: #fff;
+        border:none;
+        box-shadow: 0 1px 4px rgba(0.0, 0.0, 0.0, 0.35);
+        cursor: pointer;
+        will-change: background-color, right, box-shadow;
+        transition:
+            box-shadow 0.25s $animation-standard-curve-timing-function,
+            background-color 0.25s $animation-standard-curve-timing-function,
+            right 0.25s $animation-standard-curve-timing-function;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover:not(:disabled) {
+            box-shadow:
+                0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                0 0 0 10px rgba(0.0, 0.0, 0.0, 0.12);
+        }
+
+        &:focus:not(:disabled) {
+            background-color: #e0e0e0;
+            box-shadow:
+                0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                0 0 0 10px rgba(0.0, 0.0, 0.0, 0.25);
+        }
+
+        &:active:not(:disabled) {
+            background-color: #d6d6d6;
+            box-shadow:
+                0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                0 0 0 10px rgba(0.0, 0.0, 0.0, 0.35);
+        }
+    }
+
+    &--disabled {
+        cursor: default;
+        opacity: 0.65;
+
+        .switch {
+            &__thumb {
+                cursor: default;
+            }
+        }
+    }
+
+    &--on {
+        .switch {
+            &__track {
+                background-color: rgba($primary-color, 0.54);
+            }
+
+            &__thumb {
+                background-color: $primary-color;    
+                right: 0;
+                left: auto;    
+                
+                &:hover:not(:disabled) {
+                    background-color: $primary-color;    
+                    box-shadow:
+                        0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                        0 0 0 10px rgba($primary-color, 0.12);
+                }
+
+                &:focus:not(:disabled) {
+                    background-color: $primary-color;    
+                    box-shadow:
+                        0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                        0 0 0 10px rgba($primary-color, 0.25);
+                }
+
+                &:active:not(:disabled) {
+                    background-color: $primary-color;    
+                    box-shadow:
+                        0 1px 4px rgba(0.0, 0.0, 0.0, 0.35),
+                        0 0 0 10px rgba($primary-color, 0.35);
+                }
+            }
+        }
+    }
+}

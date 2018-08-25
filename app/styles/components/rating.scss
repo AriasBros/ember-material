@@ -1,0 +1,27 @@
+.rating-view {
+  &--icon {
+    height: 24px;
+  }
+
+  &--unrated {
+    .rating-view__icon {
+      &--empty {
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  &__icon {
+    color: #fbc02d;
+    cursor: default;
+    user-select: none;
+
+    & + .rating-view__icon {
+      margin-left: -5px;
+    }
+
+    &--empty {
+      color: rgba(#fbc02d, 0.5);
+    }
+  }
+}

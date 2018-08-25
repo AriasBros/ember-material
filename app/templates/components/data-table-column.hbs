@@ -1,0 +1,9 @@
+{{#if (has-block)}}
+  {{yield}}
+{{else}}
+  {{#if content}}
+    {{content}}
+  {{else}}
+    {{placeholder}}
+  {{/if}}
+{{/if}}

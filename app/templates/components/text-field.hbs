@@ -1,0 +1,40 @@
+<div class="text-field__box">
+  <label class="text-field__label" for={{inputId}}>{{label}}</label>
+
+  {{#if clearButton}}
+    <button class="text-field__btn-clear" disabled={{disabled}} {{action "clear" on="mouseDown"}}>
+      {{#if customClearButtonIcon}}
+        <span class="{{customClearButtonIcon}}"></span>
+      {{else}}
+        <span class="material-icons">close</span>
+      {{/if}}
+    </button>
+  {{/if}}
+
+  {{input class="text-field__input" id=inputId value=value type=type name=name disabled=disabled}}
+
+  {{#if ripple}}
+    <div class="ripple text-field__ripple">
+      <div class="ripple__part ripple__part--left"></div>
+      <div class="ripple__part ripple__part--right"></div>
+    </div>
+  {{/if}}
+</div>
+
+<div class="text-field__helper-text">
+  {{#each errors as |error|}}
+      {{error.message}}
+  {{/each}}
+
+  {{#if helperText}}
+    {{helperText}}
+  {{else}}
+    {{yield}}
+  {{/if}}
+
+  {{#if counter}}
+    <span class="text-field__counter">
+      {{count}}/{{max}}
+    </span>
+  {{/if}}
+</div>

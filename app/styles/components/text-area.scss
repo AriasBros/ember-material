@@ -1,0 +1,19 @@
+.text-area {
+  display: flex;
+  flex-direction: column;
+
+  &.text-field--filled {
+    .text-field__box {
+      cursor: text;
+      flex-grow: 1;
+      display: flex;
+    }
+    
+    .text-field__input {
+      padding-top: 0;
+      padding-bottom: 12px;
+      margin-top: 30px;
+      line-height: 1.4;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="dialog dialog--{{type}}">
+    {{#if title}}
+        <header class="dialog__header">
+            <h2 class="dialog__title">{{title}}</h2>
+        </header> 
+    {{/if}}
+
+    {{#if (has-block)}}
+        <div class="dialog__content">
+            {{yield}}
+        </div>
+    {{/if}}
+
+    {{#if hasActions}}
+        <footer class="dialog__actions">
+            {{#if dismissive}}
+                {{text-button dismissive disabled=dismissiveDisabled action=(action "onDismissDialog")}}
+            {{/if}}
+
+            {{#if confirmation}}
+                {{text-button confirmation disabled=confirmationDisabled action=(action "onConfirmDialog")}}
+            {{/if}}
+        </footer>
+    {{/if}}
+</div>

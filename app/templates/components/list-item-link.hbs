@@ -1,0 +1,9 @@
+{{#unless disabled}}
+    <a href={{url}} class="list-view__item__link">
+        {{yield}}
+    </a>
+{{else}}
+    <span class="list-view__item__link">
+        {{yield}}
+    </span>
+{{/unless}}

@@ -1,0 +1,33 @@
+.chip {
+  height: $chip-height;
+  display: inline-block;
+  padding: 2px 12px;
+  background-color: #dedede;
+  border-radius: $chip-height / 2;
+
+  &__icon {
+    font-size: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    text-align: center;
+    margin-right: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: rgba(0,0,0, 0.87);
+  }
+
+  &--with-leading-icon {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 12px 0 0;
+
+    .chip__icon {
+      width: $chip-height;
+      height: $chip-height;
+      line-height: $chip-height;
+    }
+  }
+}

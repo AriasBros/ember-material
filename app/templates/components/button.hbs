@@ -1,0 +1,15 @@
+{{#if icon}}
+  {{icon-view class="button__icon button__icon--leading" icon=icon iconType=iconType}}
+{{/if}}
+
+{{#if label}}
+  <span class="button__label">
+    {{label}}
+  </span>
+{{/if}}
+
+<div class="ripple button__ripple"></div>
+
+{{#if tooltip}}
+  {{tooltip-view tooltip elementId}}
+{{/if}}
