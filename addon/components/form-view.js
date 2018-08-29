@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { tryInvoke } from '@ember/utils';
 
 export default Component.extend({
   /**
@@ -38,7 +39,11 @@ export default Component.extend({
    * @since 1.0.0
    * @type {string}
    */
-  name: null,
+  name: "",
+
+  submit() {
+    return tryInvoke(this, "action", [this]) === true;
+  }
 }).reopenClass({
   /**
    * @since 1.0.0
