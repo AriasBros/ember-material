@@ -32,20 +32,32 @@ export default Component.extend({
   ],
 
   /**
+   * @public
    * @since 1.0.0
-   * @type {string}
+   * @type {bool|Array|Object}
+   *
+   * @see https://emberjs.com/api/ember-data/3.3/classes/DS.Model/properties/errors?anchor=errors
+   */
+  errors: false,
+
+  /**
+   * @public
+   * @since 1.0.0
+   * @type {String}
    */
   label: null,
 
   /**
+   * @public
    * @since 1.0.0
-   * @type {string}
+   * @type {String}
    */
   value: null,
 
   /**
+   * @public
    * @since 1.0.0
-   * @type {string}
+   * @type {String}
    */
   name: null,
 
@@ -209,6 +221,14 @@ export default Component.extend({
     if (!this.cleaning) {
       this.set("activated", true);
     }
+  },
+
+  /**
+   * @since 1.0.0
+   * @protected
+   */
+  input() {
+    this.set("errors", false);
   },
 
   /**
