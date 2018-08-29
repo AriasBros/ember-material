@@ -1,6 +1,5 @@
 import Service from '@ember/service';
 import { sendEvent } from '@ember/object/events';
-import { computed } from '@ember/object';
 
 export default Service.extend({
   /**

@@ -4,7 +4,6 @@ import { addListener } from '@ember/object/events';
 import { computed } from '@ember/object';
 import { htmlSafe } from '@ember/string';
 import { later, cancel } from '@ember/runloop';
-import { tryInvoke } from '@ember/utils';
 
 /**
  * @since 1.0.0
