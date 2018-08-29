@@ -24,13 +24,13 @@
 <div class="text-field__helper-text">
   {{#each errors as |error|}}
       {{error.message}}
-  {{/each}}
-
-  {{#if helperText}}
-    {{helperText}}
   {{else}}
-    {{yield}}
-  {{/if}}
+    {{#if helperText}}
+      {{helperText}}
+    {{else}}
+      {{yield}}
+    {{/if}}
+  {{/each}}
 
   {{#if counter}}
     <span class="text-field__counter">
