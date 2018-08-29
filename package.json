@@ -1,13 +1,21 @@
 {
   "name": "ember-material",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Material components for Ember apps.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "material",
+    "ember",
+    "user-interface",
+    "ui",
+    "ux"
   ],
-  "repository": "",
+  "repository": "https://github.com/AriasBros/ember-material",
   "license": "MIT",
-  "author": "",
+  "author": {
+    "email": "david@arisbros.com",
+    "name": "David Arias Vázquez"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
