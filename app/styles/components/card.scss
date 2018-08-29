@@ -31,8 +31,6 @@
   &__subtitle {
     color: rgba(0, 0, 0, 0.54);
     padding: 5px 16px 0;
-    display: flex;
-    flex-direction: row;
   }
 
   &__content {
@@ -60,7 +58,7 @@
     flex-direction: row;
     min-height: 48px;
 
-    & > .button {
+    & > .button--icon {
       color: rgba(0, 0, 0, 0.54);
     }
   }
